@@ -1,19 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import dayjs from 'dayjs';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Calendar from './Calendar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Calendar value={dayjs(new Date)} onChange={(date) => {
+      alert(date.format('YYYY-MM-DD'))
+    }}></Calendar>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
